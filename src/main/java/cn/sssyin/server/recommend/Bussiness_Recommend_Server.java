@@ -15,9 +15,9 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import cn.sssyin.modules.recommend.common.Manager;
 
 public class Bussiness_Recommend_Server {
-	static Logger logger = LoggerFactory.getLogger(Bussiness_Recommend_Server.class);
 
     public static void main(String[] args){
+    	Logger logger = LoggerFactory.getLogger(Bussiness_Recommend_Server.class);
         // 添加 ResourceClass
         List<Class<?>> resourceClassList = new ArrayList<Class<?>>();
         resourceClassList.add(ProductServiceImpl.class);
