@@ -28,12 +28,18 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Integer> retrieveProductsByName(String name) {
-		return null;
+		List<Integer> lst = new ArrayList<Integer>();
+		lst.add(11);
+		lst.add(22);
+		return lst;
 	}
 
 	@Override
 	public List<Integer> retrieveAllProducts(String store) {
-		return null;
+		List<Integer> lst = new ArrayList<Integer>();
+		lst.add(11);
+		lst.add(22);
+		return lst;
 	}
 
 	@Override

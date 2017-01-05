@@ -39,6 +39,7 @@ public class Manager {
 	public static final String Database_Order_User = prop.getProperty("jdbc.username");//"ssorder";
 	public static final String Database_Order_Password = prop.getProperty("jdbc.password");//"ssorder";
 	public static final String Database_URL = prop.getProperty("jdbc.url");//"jdbc:oracle:thin:@192.168.2.108:1521:orcl";
+	public static final String Server_Domain = prop.getProperty("cxf.domain");
 
 	public static String time_yymmdd(){
 	      Date dNow = new Date( );

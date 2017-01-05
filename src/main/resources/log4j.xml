@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="trace" monitorInterval="30">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    
+    <RollingFile name="sosoFileAppender" fileName="${sys:LOGDIR}/${sys:LOGNAME}" filePattern="${sys:LOGDIR}/archive/$${date:yyyy-MM}/${sys:LOGNAME}-%d{MM-dd-yyyy}-%i.log">
+      	<PatternLayout>
+        	<Pattern>%d{yyyy.MM.dd 'at' HH:mm:ssS} %-5level %l %M - %msg%xEx%n</Pattern>
+      	</PatternLayout>
+      	<Policies>
+        	<TimeBasedTriggeringPolicy />
+        	<SizeBasedTriggeringPolicy size="25 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="20"/>
+    </RollingFile>
+    <Async name="sosoAsyncAppender" includeLocation="true">
+      	<AppenderRef ref="sosoFileAppender"/>
+    </Async>
+  </Appenders>
+  
+  
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="sosoAsyncAppender"/>
+    </Root>
+    <logger name="cn.sssyin" level="debug" additivity="false">  
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="sosoAsyncAppender"/> 
+    </logger> 
+  </Loggers>
+   
+</Configuration>
