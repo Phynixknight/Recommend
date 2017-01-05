@@ -30,6 +30,21 @@
 					</archive>
 
 				</configuration>
+				
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib
+							</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+				
 			</plugin>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
