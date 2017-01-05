@@ -5,7 +5,7 @@
       <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
     </Console>
     
-    <RollingFile name="sosoFileAppender" fileName="${sys:LOGDIR}/${sys:LOGNAME}" filePattern="${sys:LOGDIR}/archive/$${date:yyyy-MM}/${sys:LOGNAME}-%d{MM-dd-yyyy}-%i.log">
+    <RollingFile name="sosoFileAppender" fileName="logs/log1.log" filePattern="logs/archive/$${date:yyyy-MM}/logs-%d{MM-dd-yyyy}-%i.log">
       	<PatternLayout>
         	<Pattern>%d{yyyy.MM.dd 'at' HH:mm:ssS} %-5level %l %M - %msg%xEx%n</Pattern>
       	</PatternLayout>
