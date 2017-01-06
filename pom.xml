@@ -70,7 +70,7 @@
 		<spark.version>2.1.0</spark.version>
 		<jackson.version>2.6.5</jackson.version>
 		<jetty.version>9.4.0.v20161208</jetty.version>
-		<log4j2.version>2.1</log4j2.version>
+		<log4j2.version>2.7</log4j2.version>
 	</properties>
 
 	<dependencies>
@@ -81,7 +81,8 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<dependency>
+		<!-- log4j start -->
+		<!-- <dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<version>${log4j2.version}</version>
@@ -105,7 +106,8 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>${log4j2.version}</version>
-		</dependency>
+		</dependency> -->
+		<!-- log4j end -->
 		<!--Spark begin -->
 		<dependency>
 			<groupId>org.apache.spark</groupId>
@@ -126,6 +128,12 @@
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-mllib_2.11</artifactId>
 			<version>${spark.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!--Spark end -->
 
@@ -173,6 +181,12 @@
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http-jetty</artifactId>
 			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>

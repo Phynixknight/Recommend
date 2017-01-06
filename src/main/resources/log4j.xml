@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="trace" monitorInterval="30">
+<!-- <Configuration status="trace" monitorInterval="30">
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
 
-<!-- /Users/phynix/BaiduCloud/workspace/Neon201609/RecommendClient/recommend/ -->
-		<RollingFile name="sosoFileAppender" fileName="logs/log1.log"
-			filePattern="logs/archive/$${date:yyyy-MM}/logs-%d{MM-dd-yyyy}-%i.log">
+		<RollingFile name="sosoFileAppender" fileName="log/log1.log"
+			filePattern="log/archive/$${date:yyyy-MM}/logs-%d{MM-dd-yyyy}-%i.log">
 			<PatternLayout>
 				<Pattern>%d{yyyy.MM.dd 'at' HH:mm:ssS} %-5level %l %M - %msg%xEx%n
 				</Pattern>
@@ -35,4 +34,21 @@
 		</logger>
 	</Loggers>
 
-</Configuration>
+</Configuration> -->
+ 
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">  
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">  
+  
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">  
+        <param name="Target" value="System.out" />  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern" value="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5p:  %c - %m%n" />  
+        </layout>  
+    </appender>  
+
+    <root>  
+        <priority value="debug" />  
+        <appender-ref ref="console" />  
+    </root>  
+      
+</log4j:configuration>
