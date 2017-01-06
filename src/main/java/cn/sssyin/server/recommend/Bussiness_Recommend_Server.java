@@ -15,7 +15,7 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import cn.sssyin.modules.recommend.common.Manager;
 
 public class Bussiness_Recommend_Server {
-	protected static Logger logger = LoggerFactory.getLogger(Bussiness_Recommend_Server.class);
+//	protected static Logger logger = LoggerFactory.getLogger(Bussiness_Recommend_Server.class);
 
     public static void main(String[] args){
         // 添加 ResourceClass
@@ -27,8 +27,8 @@ public class Bussiness_Recommend_Server {
         try {
 			resourceProviderList.add(new SingletonResourceProvider(new ProductServiceImpl()));
 		} catch (IOException e) {
-			logger.error("server stopped!");
-			logger.error(e.getMessage());
+//			logger.error("server stopped!");
+//			logger.error(e.getMessage());
 			System.exit(0);
 		}
 
@@ -44,7 +44,7 @@ public class Bussiness_Recommend_Server {
         factory.setResourceProviders(resourceProviderList);
         factory.setProviders(providerList);
         factory.create();
-        logger.info("CXF REST is starting at:" + Manager.Server_Domain);
+//        logger.info("CXF REST is starting at:" + Manager.Server_Domain);
 //        System.out.println("rest ws is published");
     }
 }
