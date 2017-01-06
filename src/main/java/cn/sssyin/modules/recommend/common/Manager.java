@@ -20,7 +20,8 @@ public class Manager {
 	private static Properties prop = new Properties();
 	static{
 		try {
-			prop.load(new FileInputStream("application.properties"));
+			prop.load(Manager.class.getClassLoader().getResourceAsStream("application.properties"));
+//			prop.load(new FileInputStream("application.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -59,7 +60,8 @@ public class Manager {
 	public static void main(String args[]) throws IOException{
 //		Paths.get("spark/").forEach(System.out::println);
 //		Files.list(Paths.get("spark/")).forEach(System.out::println);
-		System.out.println(get_max_folder("spark/sql"));
+//		System.out.println(get_max_folder("spark/sql"));
+		System.out.println(Manager.Server_Domain);
 		
 	}
 	
